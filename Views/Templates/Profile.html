@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../Views/Static/Images/logoCircle.JPG">
+    <meta name="search" content="width=device-width, initial-scale=1.0">
+    <title>The Place-个人中心</title>
+    <link rel="stylesheet" href="../Views/Static/CSS/Profile.css">
+</head>
+<body>
+    <?php
+        include './Views/Components/Navi_after.html';
+?>
+    <div id="profilepart">
+        <div id="profile_head">
+            <div id="touxiang">
+            </div>
+            <div id="profile_information">
+                <div id="username"><?php echo $_SESSION['currentUserName'];?></div>
+                <div id="profile_intro">这个人很神秘，什么简介都没有写~</div>
+            </div>
+            <div id="profile_navig">
+                <ul id="profile_shell">
+                    <li class="profile_btn"><a href="/profile/myInfor"><img  src="../Views/Static/Images/icons/个人信息.png"><div>个人信息</div></a></li>
+                    <li class="profile_btn"><a href="/profile/myArts"><img  src="../Views/Static/Images/icons/已发布活动.png"><div>上传的艺术品</div></a></li>
+                    <li class="profile_btn"><a href="/profile/myPurchased"><img  src="../Views/Static/Images/icons/已买到商品.png"><div>购买的艺术品</div></a></li>
+                    <li class="profile_btn"><a href="/profile/mySold"><img  src="../Views/Static/Images/icons/卖出.png"><div>卖出的艺术品</div></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <?php
+            $uri = $_SERVER['REQUEST_URI'];
+            if($uri=='/profile/myInfor'){
+                include './Views/Components/myInfor.html';
+                include './Views/Components/topUpDialog.html';
+            }
+            if($uri=='/profile/myArts'){
+                include './Views/Components/myArts.html';
+                include './Views/Components/deleteDialog.html';
+            }
+            if($uri=='/profile/myPurchased'){
+                include './Views/Components/myPurchased.html';
+            }
+            if($uri=='/profile/mySold'){
+                include './Views/Components/mySold.html';
+            }
+        ?>
+    </div>
+    <?php
+            include './Views/Components/Navi_bottom.html'
+            ?>
+</body>
+</html>

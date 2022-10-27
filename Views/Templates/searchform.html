@@ -1,0 +1,48 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="./Views/Static/Images/logoCircle.JPG">
+    <script type="text/javascript" src="./Views/Static/Javascript/searchForm.js"></script>
+    <meta charset="UTF-8">
+    <meta name="search" content="width=device-width, initial-scale=1.0">
+    <title>The Place-搜索页</title>
+    <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Navi.css">
+    <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Navi_bottom.css">
+    <link rel="stylesheet" href="./Views/Static/CSS/searchform.css">
+</head>
+<body>
+            <?php
+            if(isset($_SESSION['currentUserName'])){
+                include './Views/Components/Navi_after.html';
+            }
+            else{
+                include './Views/Components/Navi_Before.html';
+            }
+            ?>
+
+
+    <div id="searchpart">
+        <span id="wellogo">The Place Art Gallery</span>
+        <!-- 搜索框 -->
+        <section id="searchBox">
+            <div id="inputBox">
+                <input type="text" placeholder="点击搜索" id="searchInput">
+                <a id="search-btn" onclick="searchFormSearch()" href="#">&nbsp;</a>
+            </div>
+        </section>
+    </div>
+
+
+
+
+   <!-- 页脚版权信息 -->
+   <?php
+            include './Views/Components/Navi_bottom.html'
+            ?>
+
+
+</body>
+</html>

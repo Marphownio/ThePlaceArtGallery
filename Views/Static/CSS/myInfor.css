@@ -1,0 +1,84 @@
+#profile_body{
+    margin-top: 15px;
+    margin-bottom: 100px;
+    background-color:rgba(255, 255, 255, 0.6);
+    width: 100%;
+    height:auto;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#peronalinformation{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid rgb(29, 29, 29);
+    width:80%;
+    height: 380px;
+}
+#peronalinformation th{
+    border-bottom:1px solid rgb(29, 29, 29) ;
+    height:10%;
+    font-size: x-large;
+    font-weight: 800;
+}
+#peronalinformation img{
+    width: 25%;
+}
+.clo1{
+    border-right:1px solid rgb(29, 29, 29) ;
+    height: 15%;
+    padding-bottom: 20px;
+    font-size: large;
+    font-weight: 800;
+    text-align: center;
+    width:15%;
+    border-bottom:1px solid rgb(29, 29, 29) ;
+}
+.clo0{
+    border-right:1px solid rgb(29, 29, 29) ;
+    height: 15%;
+    padding-top: 10px;
+    text-align: center;
+
+}
+.clo2{
+    border-right:1px solid rgb(29, 29, 29) ;
+}
+.clo2,.clo4{
+    padding-left: 30px;
+    border-bottom:1px solid rgb(29, 29, 29) ;
+    height: 30%;
+    text-align: left;
+    font-weight: 500;
+    font-size: large;
+    width:35%;
+}
+#money{
+    outline: none;
+    border: none;
+    border-bottom:1px solid rgb(127, 127, 127) ;
+    background-color: #ffffff00;
+    font-size: large;
+    width:60%;
+}
+#money_sunmit{
+    margin-left: 30px;
+    background-color: rgb(121, 206, 255);
+    color: #000000;
+    outline: none;
+    border: none;
+    width:80px;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 800;
+    border-radius: 10px;
+}
+#money_sunmit:hover{
+    background-color: rgb(0, 148, 233);
+}

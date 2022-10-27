@@ -1,0 +1,108 @@
+#lunbo{/*图片轮播框的样式*/
+    position: relative;
+    margin-bottom: 80px;
+    margin-top: 50px;
+    width: 70%;
+    height: 600px;
+    position: relative;
+    overflow-x: hidden;
+    /* 如果它溢出了元素的内容区-剪辑元素的左/右边缘内容： */
+    border-radius: 15px;
+    box-shadow: 20px 30px 20px rgba(0,0,0,.5);/*阴影：X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展] [阴影颜色] [投影方式];*/
+}
+#images{/*大图片所在的无序列表*/
+    list-style: none;
+    width: 600%;/*相对于父元素的600%，因为页面展示六张图片*/
+    height: 100%;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: .9s;/*运动时长为0.9s,即是设置动画*/
+}
+.img{/*每一个图片框（无序表中的每一项）*/
+    width: 100%;
+    background-size: cover;
+}
+.img:nth-child(1){/*第一张图片*/
+    background-image: url("../Images/Lunbo/1.jpg");
+    cursor: pointer;
+}
+.img:nth-child(2){/*第二张图片*/
+    background-image: url("../Images/Lunbo/2.jpg");
+    cursor: pointer;
+}
+.img:nth-child(3){/*第三张图片*/
+    background-image: url("../Images/Lunbo/3.jpg");
+    cursor: pointer;
+}
+.img:nth-child(4){/*第四张图片*/
+    background-image: url("../Images/Lunbo/4.jpg");
+    cursor: pointer;
+}
+.img:nth-child(5){/*第五张图片*/
+    background-image: url("../Images/Lunbo/5.jpg");
+    cursor: pointer;
+}
+.img:nth-child(6){/*第六张图片*/
+    background-image: url("../Images/Lunbo/6.jpg");
+    cursor: pointer;
+}
+#min-images{/*小图片所在的无序列表*/
+    list-style: none;/*取消前标识*/
+    display: flex;
+    justify-content: space-evenly;/*等间距放置*/
+    position: absolute;
+    bottom: 20px;
+    width: 45%;
+    z-index: 999;/*堆叠优先级最高*/
+    right: 0;/*靠右摆放*/
+}
+.min{/*每一个小图片框（无序表中的每一项）*/
+    width: 50px;
+    height: 50px;
+    /* 鼠标悬浮时显示按钮指针 */
+    cursor: pointer;
+    border-radius: 50%;
+    background-size: cover;/*覆盖*/
+    border: solid 1px rgba(255,255,255,0.5);
+    /* 照片偏移量 */
+    background-position: -20px 0;
+}
+.min:nth-child(1){/*第1张图片*/
+    background-image: url("../Images/Lunbo/1.jpg");
+}
+.min:nth-child(2){/*第2张图片*/
+    background-image: url("../Images/Lunbo/2.jpg");
+}
+.min:nth-child(3){/*第3张图片*/
+    background-image: url("../Images/Lunbo/3.jpg");
+}
+.min:nth-child(4){/*第4张图片*/
+    background-image: url("../Images/Lunbo/4.jpg");
+}
+.min:nth-child(5){/*第5张图片*/
+    background-image: url("../Images/Lunbo/5.jpg");
+}
+.min:nth-child(6){/*第6张图片*/
+    background-image: url("../Images/Lunbo/6.jpg");
+}
+#exploremore{/*上方的提示信息的样式*/
+    height:100px;
+    line-height: 100px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: 60;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+#part2{/*所在第二块的整体样式*/
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom:50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}

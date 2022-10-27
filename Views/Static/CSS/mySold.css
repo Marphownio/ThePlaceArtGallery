@@ -1,0 +1,134 @@
+#profile_body{
+    margin-top: 15px;
+    margin-bottom: 100px;
+    background-color:rgba(255, 255, 255, 0.6); 
+    width: 100%;
+    height:auto;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#selllist{
+    /*表格*/
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 2px solid rgb(29, 29, 29);
+    width:80%;
+    height: auto;
+}
+#selllist th{
+    height:35px;
+}
+#selllist tr:nth-child(1) th{
+    font-size: larger;
+    border-bottom:2px solid rgb(29, 29, 29);
+}
+#selllist tr:nth-child(2) th{
+    border-bottom:2px solid rgb(29, 29, 29);
+}
+#selllist tr:nth-child(2) th:nth-child(2),th:nth-child(3),th:nth-child(4){
+    border-left:2px solid rgb(29, 29, 29);
+}
+
+.sell_clo1{
+    border-bottom:2px solid rgb(29, 29, 29);
+    width: 2%;
+    height:70px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 600;
+}
+.sell_clo2{
+    border-bottom:2px solid rgb(29, 29, 29);
+    padding: 2px;
+    text-align: center;
+    width: 10%;
+    border-left:2px solid rgb(29, 29, 29);
+}
+.sell_clo3{
+    font-size: medium;
+    font-weight: 600;
+    text-align: center;
+    width: 7%;
+    border-bottom: 1px solid rgb(29, 29, 29);
+    border-right:1px solid rgb(29, 29, 29);
+    border-left:2px solid rgb(29, 29, 29);
+}
+.sell_clo5 a{
+    font-size: 15px;
+    font-weight: 800;
+    color: rgb(37, 66, 83);
+}
+.sell_clo4{
+    font-size: medium;
+    font-weight: 600;
+    text-align: center;
+    width: 7%;
+    border-right:1px solid rgb(29, 29, 29);
+    border-left:2px solid rgb(29, 29, 29);
+    border-bottom:2px solid rgb(29, 29, 29);
+}
+.sell_clo5{
+    font-size:small;
+    font-weight: 600;
+    width: 15%;
+    padding: 2px;
+    text-align: left;
+    border-bottom:1px solid rgb(29, 29, 29); 
+}
+.sell_clo6{
+    font-size:small;
+    font-weight: 600;
+    border-bottom:2px solid rgb(29, 29, 29);
+    width: 15%;
+    padding: 2px;
+    text-align: left;
+}
+.sell_clo7{
+    font-size: medium;
+    font-weight: 600;
+    text-align: center;
+    width: 7%;
+    border-bottom:1px solid rgb(29, 29, 29);
+    border-left:2px solid rgb(29, 29, 29);
+}
+.sell_clo8{
+    font-size: medium;
+    font-weight: 600;
+    text-align: center;
+    width: 7%;
+    border-bottom:2px solid rgb(29, 29, 29);
+    border-left:2px solid rgb(29, 29, 29);
+}
+.sell_clo9{
+    font-size: small;
+    font-weight: 600;
+    padding: 2px;
+    width: 15%;
+    border-bottom:1px solid rgb(29, 29, 29);
+    border-left:1px solid rgb(29, 29, 29);
+}
+.sell_clo10{
+    font-weight: 600;
+    font-size:small;
+    padding: 2px;
+    width: 15%;
+    border-bottom:2px solid rgb(29, 29, 29);
+    border-left:1px solid rgb(29, 29, 29);
+}
+#selllist img{
+    max-width:100%;
+    size-adjust: cover;
+    height:65px;
+    border:1px solid rgb(86, 72, 72); ;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+}
+#selllist a{
+    text-decoration: none;
+    cursor: pointer;
+}
+

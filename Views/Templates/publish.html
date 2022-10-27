@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <title>
+            <?php
+            $url = $_SERVER['REQUEST_URI'];
+            $productId = $_GET['productId'];
+            $urlAfter=parse_url($url);
+            $path=$urlAfter['path'];
+            if($path=='/productModify'){echo 'The Place-修改艺术品';}
+            else echo 'The Place-发布艺术品';
+            ?></title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="./Views/Static/Images/logoCircle.JPG">
+        <meta name="publish" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./Views/Static/Javascript/publish.js"></script>
+        <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/publish.css">
+    </head>
+    <body>
+        <!-- 导航栏 -->
+        <?php
+        include './Views/Components/Navi_after.html';
+        if($path=='/productModify'){
+            if(!$productId){
+                echo '<script>alert("访问错误！");</script>';
+                echo '<script>history.back();</script>';
+            }
+            else{
+                require './Controller/productController.php';
+                if(testModifier()==false){
+                    echo '<script>alert("您无权修改他人发布的艺术品！");</script>';
+                    echo '<script>history.back();</script>';
+                }
+                else{
+                    echo "<script>window.onload = function(){getInformToUpate('$productId');} </script>";
+                }
+            }
+        }
+?>
+        <!-- 艺术品发布框 -->
+        <div id="publishframe">
+            <div id="publishwelcome">
+                <?php if($path=='/productModify'&&$productId){echo "请对艺术品信息进行修改";}
+                                    else echo "请填写艺术品信息";?>
+           </div>
+            <form id="publishform" method="post" action="<?php
+                if($path=='/productModify'&&$productId){echo "?p=release&m=update&productId=";echo $productId;}
+            else echo "?p=release&m=publish";
+            ?>" enctype="multipart/form-data">
+                <fieldset>
+                <div id="publishleft">
+                    <div id="clickpart" onclick="uploadActive()">
+                        <?php if($path=='/productModify'&&$productId){echo '<img class="imgs"  title="点击可以切换图片" src="?p=user&m=imgView&a=';echo $productId;echo '">';}
+                              else{echo '<img class="imgs"  title="点击可以切换图片" src="" hidden>';
+                                    echo ' <img class="imgs"  src="./Views/Static/Images/icons/添加图片.png">';}          ?>
+                    </div>
+                    <div id="informpart">
+
+                        <div class="text">
+                            <?php if($path=='/productModify'&&$productId){echo "点击图片以更换新图片";}
+                                    else echo "请点击+上传艺术品图片";?>
+                            </div>
+                        <div id="warninform1" hidden></div>
+                        <div class="filename" hidden>文件名<span class="filename2"></span></div>
+                        <input id="imgbtn" name="productImg" class="hidenbtn" type="file" onchange="return showimg(this)"
+                        accept="image/jp2,image/tiff,image/png, image/jpeg, image/jpg"
+                        hidden>
+                    </div>
+                </div>
+                <div id="publishright">
+                    <div class="inputitmes">
+                        <div class="inputitme">
+                            <div class="subinputitme">
+                                <label for="publish_name">艺术品名:<span class="publishwarning" hidden>svs</span></label>
+                                <input type="text"  name="productName" onblur="nametest()" id="publish_name"/>
+                            </div>
+                        </div>
+                        <div class="inputitme">
+                            <div class="subinputitme">
+                                <label for="publish_artist">作者姓名:<span class="publishwarning" hidden></span></label>
+                                <input type="text" name="productArtist" onblur="artisttest()" id="publish_artist"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputitmes">
+                        <div class="inputitme">
+                            <div class="subinputitme">
+                                <label for="publish_year">创作年份:<span class="publishwarning" hidden></span></label>
+                                <input type="text" name="productCreatedYear" onblur="yeartest()" id="publish_year"/>
+                            </div>
+                        </div>
+                        <div class="inputitme">
+                            <div class="subinputitme">
+                                <label for="publish_type">艺术流派:<span id="detailinfor">&nbsp;&nbsp;&nbsp;(分隔请用;号)</span><span class="publishwarning" hidden></span></label>
+                                <input type="text" name="productType" onblur="styletest()" id="publish_type"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputitmes">
+                        <div class="inputitme">
+                            <div class="subinputitme">
+                                <label for="publish_subject">作品主题:</label>
+                                <input type="text" name="productSubject" id="publish_subject"/>
+                            </div>
+                        </div>
+                        <div class="inputitme">
+                            <div class="subinputitme">
+                                <label for="publish_times">创作时代:</label>
+                                <input type="text" name="productCreatedTimes" id="publish_times"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputitmes">
+                        <div class="inputitme">
+                            <div class="subinputitme">
+                                <label for="publish_price">售价￥:<span class="publishwarning" hidden></span></label>
+                                <input type="text" name="productPrice" onblur="pricetest()" id="publish_price">
+                            </div>
+                        </div>                
+                        <div class="inputitme" id="lengthwidth">
+                            
+                                <div class="kk">
+                                    <label for="publish_length">长:<span class="publishwarning" hidden></span></label>
+                                    <input id="publish_length" name="productLength" onblur="lengthtest()" type="number"/>
+                                </div>
+                          
+                           
+                                <div  class="kk">
+                                    <label for="publish_width">宽:<span class="publishwarning" hidden></span></label>
+                                    <input id="publish_width" name="productWidth" onblur="widthtest()" type="number"/>
+                                </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div  id="inputintro">
+                        <label for="publish_intro">艺术品简介:<span class="publishwarning" hidden></span></label>
+                        <textarea id="publish_intro" name="productIntroduction" onblur="introtest()" type="text"></textarea>
+                    </div>
+                    <div class="inputitme"><?php
+                        if($path=='/productModify'&&$productId){echo '<input id="publishsubmit" onclick="return modifyTest()" type="submit" value="提交修改"/>';}
+                        else echo '<input id="publishsubmit" onclick="return publishtest()" type="submit" value="发布艺术品"/>';
+                        ?>
+                    </div>
+                    
+        
+                </div>
+            </fieldset>
+            </form>
+        </div>
+
+
+       
+
+        <!-- 页脚版权信息 -->
+        <?php
+            include './Views/Components/Navi_bottom.html'
+            ?>
+    </body>
+</html>

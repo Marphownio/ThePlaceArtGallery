@@ -1,0 +1,235 @@
+*{
+    user-select: none;/*页面不允许做粘贴复制*/
+}
+body{
+    background-image: url(../Images/background.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+#productdetails{/*商品详情框*/
+    margin-top: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width:100%;
+    display:flex;
+    justify-content:space-evenly;
+}
+#smallBox{
+    display: none;
+    position: fixed;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+#productimg{/*图片框*/
+    border-radius: 15px;
+    box-shadow: 20px 30px 20px rgba(0,0,0,.5);
+    object-fit: contain ;
+    border: 2px solid silver;
+    height:640px;
+    width:480px;
+}
+#productinfor{/*详细信息框*/
+    border: 2px solid silver;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    box-shadow: 20px 30px 20px rgba(0,0,0,.5);
+    display: block;
+    justify-content:space-around;
+    height:640px;
+    width:480px;
+}
+.detailsinfo{/*右侧单条信息框*/
+    overflow: hidden;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: block;
+    width: 420px;
+    height:40px;
+    word-wrap: break-word;/*自动换行*/
+    line-height: 40px;
+    font-weight: 600;
+    font-size: x-large;
+}
+.detailsinfo:nth-child(1){/*第一条信息*/
+    padding-top: 30px;
+}
+.detailsinfo:nth-child(9) {
+    font-size: larger;
+}
+.detailsinfo:nth-child(10) {
+    font-size: larger;
+}
+.detailsinfo:nth-child(11) {
+    font-size: larger;
+}
+.detailsinfo:nth-child(12) {
+    font-size: larger;
+}
+#buybut{/*按键区域*/
+    margin-top: 20px;
+    width: 480px;
+    height:100px;
+    display: flex;
+    justify-content:space-evenly;
+}
+.detalisbtn{/*立即购买、加入购物车*/
+    border-radius: 15px;
+    text-align: center;
+    background-color: #e07b5fb6;
+    display: block;
+    width: 130px;
+    height:50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+.detalisbtn:hover{/*立即购买、加入购物车悬浮*/
+    background-color: #ffa48bbd;
+}
+.detalisbtn a{/*超链接样式*/
+    text-decoration: none;
+    color: black;
+    font-size:larger;
+    font-weight: 800;
+}
+
+/*查看详细评论提醒言*/
+#ToSeeComment,#ToSeeCommentSymbol{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: 600;
+}
+#productcomments{
+    /*详细评论框*/
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+    margin-left: 70px;
+    margin-bottom: 100px;
+    width:90%;
+    height:auto;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+#tocomment{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+#commentsubmit{
+    user-select: none;
+    outline: none;
+    font-size: medium;
+    font-weight: 800;
+    background-color: #e07b5fb6;
+    height: 100px;
+    cursor: pointer;
+    border: 1px solid silver ;
+    border-radius: 15px;
+    width:90px;
+}
+#commentsubmit:hover{
+    background-color: #ffa48bbd;
+}
+#snullResult{
+    font-weight: 700;
+    height: 150px;
+    font-size: x-large;
+}
+
+#tocomment #comment{
+    font-size: x-large;
+    word-wrap:break-word;/*换行*/
+    outline:none;/*去除点击时的边框*/
+    color: black;
+    background-color: rgba(193, 187, 187, 0);
+    border: 2px solid silver;
+    border-radius: 5px;
+    margin-left: 80px;
+    height: 100px;
+    width:1100px;
+    margin-right: 20px;
+}
+
+#commentstable{
+    /*评论表*/
+    text-align: center;
+    border-collapse:collapse;
+    font-size:medium;
+    border-radius: 15px;
+    margin-left: 65px;
+    width:1250px;
+}
+#commentstable .imgcell{
+    width:50px;
+    border:none;
+    background-image: url(../Images/icons/users.png);
+    background-size:contain;
+}
+#commentstable .idcell,.datecell{
+    width:200px;
+    border-right: 1px rgb(82, 81, 81) solid;
+}
+#commentstable .commentcell{
+    font-size:large;
+    font-weight: 800;
+    padding-left: 20px;
+    text-align: left;
+    width:900px;
+    border-right: 1px rgb(82, 81, 81) solid;
+}
+#commentstable .likenumbercell,.likcell{
+    width:100px;
+}
+#commentstable td{
+    height:50px;
+}
+#commentstable #like{
+    height:30px;
+    font-weight: 700;
+    width:70px;
+    border:1px rgb(82, 81, 81) solid;
+    background-color: #e07b5fb6;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#commentstable #least{
+    height:10px;
+    border-bottom: 1px rgb(82, 81, 81) solid;
+}
+#commentstable #greatest{
+    height:10px;
+}
+#commentstable #like:hover{
+    background-color: #ffa48bbd;
+}
+#deleteComment{
+    height:30px;
+    font-weight: 700;
+    width:70px;
+    border:1px rgb(82, 81, 81) solid;
+    background-color: #f89898;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#deleteComment:hover{
+    background-color:  #fab6b6;
+}
+#dislike{
+    height:30px;
+    font-weight: 700;
+    width:70px;
+    border:1px rgb(82, 81, 81) solid;
+    background-color: #f89898;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#dislike:hover{
+    background-color:  #fab6b6;
+}

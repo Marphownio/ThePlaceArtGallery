@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    user-select: none;/*页面不允许做粘贴复制*/
+    padding: 0;
+}
+#navig{/*导航栏整体*/
+    z-index: 999;
+    width:100%;
+    background-color: rgb(37, 66, 83);
+    font-size: 20px;
+    color: #f4f1de;
+    height: 65px;
+}
+#shell{/*第一级无序表样式*/
+    display: inline-block;
+    list-style:none;
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+.non_list:nth-child(1){
+    white-space: nowrap;
+    width:25%;
+}
+.non_list:nth-child(2){
+    padding-left: 15px;
+    text-align: left;
+    width:40%;
+}
+#logo{
+    font-size: xx-large;
+    font-weight: 800;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+
+}
+#navig a{/*调整导航栏中超链接样式*/
+    text-decoration: none;
+    color: #f4f1de;
+}
+.non_list{/*导航栏里非下拉菜单按钮的样式*/
+    height: 100%;
+    width:8.5%;
+    line-height: 325%;
+    text-align: center;
+}
+.list_btn{/*导航栏里下拉菜单中按钮的样式*/
+    list-style:none;
+}
+#btn{/*第一级无序表中能点出下拉菜单的按钮*/
+    transition: .5s;
+    cursor: pointer;
+}
+.non_lista:hover,#btn:hover{/*悬浮时导航栏第一级表的样式显示*/
+    transition: .5s;
+    background-color: #d15a39;
+}
+#btn li:hover{/*悬浮时导航栏下拉菜单的样式显示*/
+    background-color: #ffb29d;
+}
+#btn ul li{/*下拉菜单未呼出的样式*/
+    transition: .2s;
+    width:auto;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-65px);
+    background-color: #e07a5f;
+}
+#btn:hover li{/*下拉菜单的呼出的样式*/
+    height: 65px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+#searchitms{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#trigger{
+    width: 100%;
+}
+#searchitms:hover #subsearch{
+    transform: translateY(35px);
+    opacity: 1;
+}
+#subsearch{
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: .5s;
+    margin-top: -20px;
+    width:180%;
+    background-color:rgba(255, 255, 255, 0.5) ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 15px;
+}
+#search-txt{
+    margin-left:5%;
+    border: none;
+    outline: none;
+    background: none;
+    width:88%;
+}
+#subsearch img{
+    cursor: pointer;
+    width:12%;
+    text-decoration: none;
+    background-size:cover;
+}
+#logoCorn{
+    height:70px;
+    margin-left: 5px;
+    margin-right: 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+#logoParts{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    line-height: 65px;
+}
+#currentPageName{
+    font-weight: 700;
+    line-height: 65px;
+    font-size: 15px;
+    padding-left: 15px;
+    text-align: left;
+    transition: 0.3s;
+    opacity: 0;
+}
+#shell:hover #currentPageName{
+    opacity: 1;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/Controller/login&amp;LogoutController.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Controller/registerController.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/Controller/releaseController.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/../../mysql-8.0.28-winx64" dialect="MySQL" />
+    <file url="PROJECT" dialect="MySQL" />
+  </component>
+</project>

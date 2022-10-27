@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("../Images/Background.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#searchpart{
+    /*搜索部分*/
+    margin-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    height: 200px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* 提示信息 */
+#wellogo{
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 800;
+    font-size: 60px;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    display: block;
+}
+
+/* 中间搜索框 */
+#searchBox{
+    margin-top: -50px;
+    width: 80%;
+    min-width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#inputBox{
+    margin-top: 30px;
+    width: 60%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0 15px;
+    border-radius: 20px;
+}
+#inputBox input{
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0 10px 0 0;
+    flex: 1;
+    height: 50px;
+    line-height: 50px;
+    color: #242323;
+    font-size: 20px;
+}
+#inputBox input::placeholder{
+    color: rgb(37, 66, 83);
+    font-size: 20px;
+}
+
+#search-btn{/*搜索按钮*/
+    text-decoration: none;
+    background-image: url(../Images/icons/searchicon.png);
+    width:40px;
+    height:40px;
+    background-size:cover;
+}
+#radiobox{/*选择键框*/
+    margin-top: 5px;
+    display: flex;
+    align-content:center;
+}
+#radiobox input{
+    margin: 0.5rem;
+    opacity: 0;
+}
+#radiobox label{
+    font-weight: 600;
+}
+#radiobox input + label:before {
+    content: '';
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 100%;
+    border: 1px solid #b4b4b4;
+    display: inline-block;
+    width: 1.1em;
+    height: 1.1em;
+    position: relative;
+    top: 0.25em;
+    margin-right: 1em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+  }
+#radiobox input:checked + label:before {
+    background-color: rgba(96, 136, 159, 0.913);
+    box-shadow: inset 0 0 0 4px #aaaaaab3;
+  }
+  #radiobox input:focus + label:before {
+    outline: none;
+  }
+  #radiobox input + .label:empty:before {
+    margin-right: 0;
+  }
+  
+  
+/*搜索结果展示框*/
+#seachingresultform{
+    background-color:rgba(255, 255, 255, 0.6); 
+    width:90%;
+    height: auto;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+#headinfor{
+    margin-bottom: -25px;
+    height:80px;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-between;
+}
+#wraning{
+    font-size: 40px;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-weight: 600;
+}
+#showwayradiobox{/*选择键框*/
+    padding-top: 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content:center;
+}
+#showwayradiobox input{
+    margin: 0.5rem;
+    opacity: 0;
+}
+#showwayradiobox label{
+    margin-top: 50px;
+    font-weight: 600;
+}
+#showwayradiobox input + label:before {
+    content: '';
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 100%;
+    border: 1px solid #b4b4b4;
+    display: inline-block;
+    width: 1.1em;
+    height: 1.1em;
+    position: relative;
+    top: 0.25em;
+    margin-right: 1em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+  }
+#showwayradiobox input:checked + label:before {
+    background-color: rgba(96, 136, 159, 0.913);
+    box-shadow: inset 0 0 0 4px #aaaaaab3;
+  }
+#showwayradiobox input:focus + label:before {
+    outline: none;
+  }
+#showwayradiobox input + .label:empty:before {
+    margin-right: 0;
+  }
+  
+
+#seachingresultform table{
+    border-radius: 15px;
+    width:90%;
+    margin-top: 20px;
+    margin-bottom: 20px;;
+    border-collapse: collapse;
+    border:1px solid gray;
+}
+
+      
+#seachingresultform th{
+    font-size: larger;
+    color: #f4f1de;
+    background: rgb(37, 66, 83);
+    height:2.5em;
+} 
+#seachingresultform .tdone{/*热度*/
+    width:8%;
+    text-align: center;
+    font-size: large;
+    font-weight: 800;
+}
+#seachingresultform .tdtwohead{/*商品信息*/
+    width:30%;
+}
+#seachingresultform .tdtwoimg{/*图片*/
+    width:10%;
+}
+#seachingresultform .tdtwoname{/*名字*/
+    width:20%;
+    padding-left:20px;
+    text-align: left;
+    font-size: x-large;
+    font-weight: 800;
+}
+#seachingresultform .tdtwoname a{
+    text-decoration: none;
+    color:rgb(37, 66, 83);
+}
+#seachingresultform .tdtwoartist{/*作者*/
+    width:12%;
+    padding-left:20px;
+    text-align: left;
+    font-size: large;
+    font-weight: 800;
+}
+#seachingresultform .tdthree{ 
+    text-align: left;     /*简介*/
+    padding: 1%;
+    font-size: large;
+    font-weight: 700;
+    width:20%;
+}
+#seachingresultform .tdfour{        /*发布者*/
+    width:12%;
+    font-size: larger;
+    font-weight: 700;
+}
+#seachingresultform .tdfive{/*价格*/
+    width:10%;
+    font-size: large;
+    font-weight: 700;
+}
+#seachingresultform .tdsix{    /*状态*/ 
+    width:10%;
+    font-size: large;
+    font-weight: 700;
+}
+#seachingresultform .add{    /*加入购物车*/
+    width:60%;
+    height:30px;
+    line-height: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: small;
+    border-radius: 5px;
+    background-color: #F0F2F5;
+    outline: none;
+    border: none;;
+}
+#seachingresultform .add:hover{    /*加入购物车*/
+    background-color: rgb(208, 208, 208);
+}
+#seachingresultform .tdsix{    /*操作*/ 
+    width:10%;
+}
+.tdtwoimg img{
+    border:1px solid rgb(86, 72, 72);
+    box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+    width:85%;
+}
+
+.trclass1{
+    height:75px;
+}
+.trclass2{
+    height:55px;
+}
+#seachingresultform td{
+    overflow: hidden;   
+    text-align: center;
+}
+#lines{
+    height:20px;
+    border-bottom: 2px rgb(49, 51, 57) solid;
+}
+.talast{
+    height:35px;
+    line-height: 35px;
+}
+.talast a{
+    font-weight: 600;
+    color: rgb(37, 66, 83);
+    text-decoration: none;
+    cursor: pointer;
+}
+.select {
+    text-align: center;
+    display: inline-block;
+    width: 40px;
+    border-radius: 4px;
+}
+#nullResult{
+    font-weight: 700;
+    height: 150px;
+    font-size: x-large;
+}
+  
+  

@@ -1,0 +1,91 @@
+#payBox{
+    transform: translateY(-300px);
+    opacity: 0;
+    transition: .3s;
+    background-color: rgba(255, 255, 255, 1);
+    width:400px;
+    height:300px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -350px;
+}
+#payBox h2{
+    margin-top: 30px;
+}
+#payform{
+    margin-top: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#payInput{
+    outline: none;
+    border: none;
+    background-color: rgba(238, 237, 237, 0);
+    height: 35px;
+    margin-top: 25px;
+    border-bottom: 2px solid rgb(138, 138, 138);
+    font-size: 20px;
+    width:80%;
+}
+#btns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 45px;
+    width:80%;
+}
+#submit_btn{/*提交按钮*/
+    outline: none;
+    border: none;
+    background-color: rgb(37, 66, 83,0.8);
+    width: 30%;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+#submit_btn:hover{/*鼠标点击提交按钮后效果*/
+    background-color: rgb(37, 66, 83, 1);
+    cursor: pointer;
+}
+#calcelBtn{
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: #f56c6ce1;
+    width: 30%;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+#calcelBtn:hover{/*鼠标点击提交按钮后效果*/
+    background-color:#f56c6c;
+    cursor: pointer;
+}
+#closeaa{
+    height: 26px;
+    cursor: pointer;
+
+}
+#closeIcon{
+    margin-top: 3px;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+#warnin{
+    font-size: small;
+    font-weight: 600;
+    color: #d15a39;
+}

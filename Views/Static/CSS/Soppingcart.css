@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    user-select: none;/*页面不允许做粘贴复制*/
+    padding: 0;
+}
+.trclass1{
+    height:40px;
+}
+.trclass2{
+    height:10px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../Images/Background.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+    align-items: center;
+}
+#cartpart{
+    background-color:rgba(255, 255, 255, 0.6); 
+    width:90%;
+    min-height: 560px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    margin-top:5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+table{
+    border-radius: 15px;
+    width:90%;
+    margin-top: 20px;
+    margin-bottom: 20px;;
+    border-collapse: collapse;
+    border:1px solid gray;
+}
+
+      
+#cartpart th{
+    font-size: larger;
+    color: #f4f1de;
+    background: rgb(37, 66, 83);
+    height:2.5em;
+} 
+#cartpart .tdone{/*选择*/
+    width:8%;
+}
+#cartpart .tdtwohead{/*商品信息*/
+    width:30%;
+}
+#cartpart .tdtwoimg{/*图片*/
+    width:10%;
+}
+#cartpart .tdtwoname{/*名字*/
+    width:20%;
+    padding-left:10px;
+    text-align: left;
+    font-size: x-large;
+    font-weight: 800;
+}
+.tdtwoname a{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(37, 66, 83);
+}
+#cartpart .tdtwoartist{/*作者*/
+    width:12%;
+    padding-left:10px;
+    text-align: left;
+    font-size: large;
+    font-weight: 800;
+}
+#cartpart .tdthree{ 
+    text-align: left;     /*简介*/
+    padding: 1%;
+    font-size: large;
+    font-weight: 700;
+    width:20%;
+}
+#cartpart .tdfour{        /*发布者*/
+    width:12%;
+    font-size: larger;
+    font-weight: 700;
+}
+#cartpart .tdfive{/*价格*/
+    width:10%;
+    font-size: large;
+    font-weight: 700;
+}
+#cartpart .tdsix{    /*状态*/ 
+    width:10%;
+    font-size: large;
+    font-weight: 700;
+}
+#cartpart .del{    /*删除*/ 
+    width:80px;
+    height:30px;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: 800;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    outline: none;
+    border: none;;
+}
+#cartpart .del:hover{    /*删除*/ 
+    background-color: rgb(159, 0, 0);
+}
+#cartpart .tdsix{    /*操作*/ 
+    width:10%;
+}
+#cartpart img{
+    border:1px solid rgb(86, 72, 72); ;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.5);
+    width:85%;
+    margin-top: 5px;
+}
+#cartpart td{
+    overflow: hidden;   
+    text-align: center;
+}
+#lines{
+    height:20px;
+    border-bottom: 2px rgb(49, 51, 57) solid;
+}
+#nowbuy{
+    background-color: rgb(89, 100, 136);
+    border: none;
+    outline: none;
+    font-size:large;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    width: auto;
+    border-radius: 5px;
+    line-height: 30px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+#nowbuy:hover{
+    background-color: rgb(89, 120, 156);
+}
+#snullResult{
+    font-weight: 700;
+    height: 150px;
+    font-size: x-large;
+}
+.talast{
+    font-weight: 800;
+    height:30px;
+    line-height: 30px;
+}
+.btnRow{
+    margin-top: 20px;
+}
+#cleanBtn{
+    border: none;
+    outline: none;
+    font-size:large;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    width: auto;
+    border-radius: 5px;
+    margin-top: 5px;
+    line-height: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-left: 55px;
+}
+#cleanBtn:hover{
+    background-color: rgb(208, 208, 208);
+}

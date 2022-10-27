@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="../Views/Static/CSS/topUpDialog.css"/>
+    <div id="payBox">
+        <div id="closeIcon"><img id="closeaa" onclick="closeTopUpDialog()" src="../Views/Static/Images/icons/关闭2.png">&nbsp;</div>
+        <h2>钱包充值</h2>
+
+        <form id="payform" action="?p=user&m=topup" method="post">
+            <input id="payInput" type="text" name="topUp" placeholder="请输入您要充值的金额数目">
+            <div id="warnin">&nbsp;</div>
+            <div id="btns">
+                <input id="submit_btn" type="submit" value="确认充值">
+                <div id="calcelBtn" onclick="closeTopUpDialog()">取消充值</div>
+            </div>
+        </form>
+    </div>

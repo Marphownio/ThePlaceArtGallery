@@ -1,0 +1,86 @@
+<?php
+session_start();
+?>
+<html>
+    <head>
+        <title>The Place-搜索</title>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="./Views/Static/Images/logoCircle.JPG">
+        <script type="text/javascript" src="./Views/Static/Javascript/searchPage.js"></script>
+        <meta name="mainpage" content="width=device-width, initial-scale=1.0">
+        <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/searchpage.css">
+        <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Navi.css">
+        <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Navi_bottom.css">
+    </head>
+    <body>
+        <!-- 导航栏 -->
+        <?php
+            if(isset($_SESSION['currentUserName'])){
+                include './Views/Components/Navi_after.html';
+            }
+            else{
+                include './Views/Components/Navi_Before.html';
+            }
+            ?>
+        <!--搜索框  -->
+        <div id="searchpart">
+            <span id="wellogo">The Place Art Gallery</span>
+            <!-- 搜索框 -->
+            <section id="searchBox">
+                <div id="inputBox">
+                    <input type="text" placeholder="点击搜索" id="searchInput" value="<?php if($_GET['content']) echo $_GET['content'];?>">
+                    <a  id="search-btn" href="#">&nbsp;</a>
+                </div>
+                <div id="radiobox">
+                <span><input type="radio" id="bytitle" name="sortway" value="1" <?php if($_GET['searchBy']==1) echo "checked";?>/>
+                    <label for="bytitle">搜索艺术品名</label> </span>
+                <span><input type="radio" id="byname" name="sortway" value="2" <?php if($_GET['searchBy']==2) echo "checked";?>/>
+                    <label for="byname">搜索作者名</label></span>
+                </div>
+            </section>
+        </div>
+          
+        
+        <div id="seachingresultform">
+            <div id="headinfor">
+                <div id="wraning">搜索结果如下：</div>
+                <div id="showwayradiobox">
+                    <span>
+                        <input type="radio" id="showbytitle" name="showway" value="1" <?php if($_GET['sortBy']==1) echo "checked";?>/>
+                        <label for="showbytitle">按名称排列</label>
+                    </span>
+                    <span>
+                        <input type="radio" id="showbyviews" name="showway" value="2" <?php if($_GET['sortBy']==2) echo "checked";?>/>
+                        <label for="showbyviews">按访问量排列</label> 
+                    </span>
+                    <span>
+                        <input type="radio" id="showbyprice" name="showway" value="3" <?php if($_GET['sortBy']==3) echo "checked";?>/>
+                        <label for="showbyprice">按价格排列</label>
+                    </span>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="thtwohead">图片</th>
+                        <th class="thtwohead">商品信息</th>
+                        <th class="ththree">简介</th>
+                        <th class="thfour">发布者</th>
+                        <th class="thfive">价格</th>
+                        <th class="thsix">状态</th>
+                        <th class="thone">热度</th>
+                        <th class="thseven">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="result">
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- 页脚版权信息 -->
+        <footer id="foot_information">
+            <div id="copyright_info">Copyright &copy;2022 Marphownio. All rights reserved.</div>
+        </footer>
+    </body>
+</html>

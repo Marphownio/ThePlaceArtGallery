@@ -1,0 +1,173 @@
+#currentpopular{/*上方的提示信息的样式*/
+    height:100px;
+    line-height: 100px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+
+#CurrentPopularPart{/*当前热门展示框*/
+    right:10px;
+    position: relative;
+    width: 1150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: 350px;
+    height: 500px;
+    margin: 50px;
+    background-color: rgba(46, 79, 98, 0.848);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);  /*元素背景阴影*/
+    flex-shrink: 0; /*子元素不被压缩*/
+}
+.card .photo img{
+    width: 100%;
+    height: 100%;
+    /* 保持原有尺寸比例，裁切长边 */
+    object-fit: cover;
+}
+/* 默认大图 */
+.card .photo{
+    /* 绝对定位 */
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    /* 动画过渡 */
+    transition: 0.5s;
+}
+/* 鼠标移入变小图 */
+.card:hover .photo{
+    top: 30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+/* 这里加个黑色到透明的渐变背景，可以更好的看清楚名字 */
+.card .photo::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*background-image: linear-gradient(direction, color-stop1, color-stop2, ...);*/
+    background: linear-gradient(to bottom,transparent 40%,#222);
+}
+.card h1{ /*艺术品名字*/
+    white-space: nowrap;
+    z-index: 2;
+    position: absolute;
+    top: 370px;
+    font-weight: 800;
+    transition: 0.5s;
+}
+.card:hover h1{ /*艺术品名字，鼠标悬浮后*/
+    top: 170px;
+}
+.card .p_productArtist{ /*艺术品作者*/
+    margin-top: 220px;
+    width: 80%;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.card p{   /*艺术品简介*/
+    margin-top: 10px;
+    max-height:120px;
+    overflow: hidden;
+    width: 80%;
+    text-indent: 32px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    line-height: 30px;
+}
+.card a{ /*艺术品详情页按钮*/
+    position: absolute;
+    top:420px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 8px 32px;
+    border-radius: 8px;
+}
+.card a:hover{ /*艺术品详情页按钮，悬浮*/
+    color: #fff;
+    background-color: rgba(255,255,255,0.2);
+}
+.priceAndDate{  /*艺术品价格与时间*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#part3{/*所在第3块的整体样式*/
+    margin: 0;
+    height:700px;
+    padding-top: 60px;
+    padding-bottom:60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+}
+#part3 h1{
+    margin-bottom: 30px;
+}
+
+#latestrelease{/*上方的提示信息的样式*/
+    height:100px;
+    line-height: 100px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-size: 60px;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+#part4{/*所在第4块的整体样式*/
+    margin: 0;
+    height:650px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 60px;
+    padding-bottom:60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#part4 h1{
+    margin-bottom: 30px;
+}
+
+#latestreleasePart{/*最新发布展示框*/
+    right:10px;
+    position: relative;
+    width: 1150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

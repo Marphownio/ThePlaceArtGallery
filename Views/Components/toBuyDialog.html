@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="./Views/Static/CSS/toBuyDialog.css"/>
+<meta charset="utf-8">
+<div id="toBuyBox">
+    <div id="closeIcon"><img id="closeaa" onclick="closeDialog()" src="./Views/Static/Images/icons/关闭2.png">&nbsp;</div>
+    <h2>您确认要下单吗？</h2>
+    <h3 id="priceAndnumbers">一共<span id="diaNumber"></span>件商品，总价￥<span id="diaPrice"></span>元</h3>
+    <div class="meg1">您的账户信息</div>
+    <div class="meg">账户余额：<span id="diaAccount"></span></div>
+    <div class="meg">电话号码：<span id="diaPhoneNumber"></span></div>
+    <div class="meg">收货地址：<span id="diaAddress"></span></div>
+    <div id="btns">
+        <div id="topUpBtn" onclick="toTopUp()">去充值</div>
+        <div id="toBuysubmitbtn" onclick="toBuy()">确认下单</div>
+        <div id="calcelBtn" onclick="closeDialog()">我再想想</div>
+    </div>
+
+
+</div>

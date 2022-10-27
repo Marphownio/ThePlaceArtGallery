@@ -1,0 +1,48 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="shortcut icon" href="./Views/Static/Images/logoCircle.JPG">
+        <script type="text/javascript" src="./Views/Static/Javascript/Login.js"></script>
+        <meta charset="utf-8">
+        <meta name="login" content="width=device-width, initial-scale=1.0">
+        <title>The Place-登录</title>
+        <link rel="stylesheet" type="text/css" href="./Views/Static/CSS/Login.css"/>
+    </head>
+    <body>
+        <!-- 导航栏 -->
+        <?php
+            if(isset($_SESSION['currentUserName'])){
+                include './Views/Components/Navi_after.html';
+            }
+            else{
+                include './Views/Components/Navi_Before.html';
+            }
+            ?>
+
+       <!-- 登录框 -->
+        <form class="login_form" action="?p=login&m=getLogin" method="post">
+            <h1 style="text-align:center">请登录</h1>
+<!--            <p id="warn_msg">提示信息</p>-->
+            <label>
+                <input id="IDinput" onblur="IDtest()" name="nameOrEmail" type="text" placeholder="用户名/邮箱"><br>
+                <input id="loginMethods" name="loginMethods" hidden>
+                <div class="warninfo" id="IdWhetherNull" style="text-align:center">&nbsp;</div>
+                <input id="Passwordinput" onblur="PWtest()" name="userPassword" type="password" placeholder="密码"><br>
+                <div class="warninfo" id="PWWhetherNull" style="text-align:center">&nbsp;</div><br>
+                <input id="IdentifyingCode" type="text" placeholder="请输入验证码">
+                <canvas id="canvas"></canvas><br>
+            </label>
+            <input type="submit" value="登录" id="submit_btn" ><br>
+            <a class="To_register" href="/register">没有账号？请点击注册</a>
+            <a class="To_register" href="/">回到首页</a>
+        </form>
+
+        <!-- 页脚版权信息 -->
+        <?php
+            include './Views/Components/Navi_bottom.html'
+            ?>
+    </body>
+</html>

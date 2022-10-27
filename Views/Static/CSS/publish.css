@@ -1,0 +1,187 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../Images/Background.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+    align-items: center;
+}
+#publishframe{/*页面中间部分*/
+    padding-bottom: 45px;
+    margin-top: 70px;
+    margin-bottom: 90px;
+    width:80%;
+    border-radius: 15px;
+    background-color:rgba(255, 255, 255, 0.6); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+fieldset{/*边线框*/
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    border: 2px solid black;
+}
+#publishwelcome{/*顶部欢迎语*/
+    font-size: xx-large;
+    font-weight: 900;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+#publishform{/*表*/
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width:80%;
+    height:510px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#publishright{/*右半部分表*/
+    border-left:2px solid black ;
+    width:50%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#publishright input{/*右半部分的所有输入框*/
+    padding: 5px;
+    border-radius: 5px;
+    height:30px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    outline: none;
+}
+#publishright label{/*右半部分的所有输入框文字*/
+    margin-bottom: 5px;
+    font-size: larger;
+    font-weight: 800;
+}
+#detailinfor{/*艺术流派的详细信息*/
+    font-size:2px;
+    font-weight: 400;
+}
+.inputitmes{/*每一行的内容*/
+    justify-content:space-around;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.inputitme{/*每一行中一列的内容*/
+    max-width: 50%;
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+.subinputitme{/*每一行中一列中的内容（笑*/
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+.kk{/*为长宽的输入框增加属性*/
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+}
+#lengthwidth{/* 长宽的输入框*/
+    flex-direction: row;
+    justify-content:space-evenly;
+}
+#lengthwidth input{
+    width: 100%;
+} 
+#inputintro{/*简介输入框大小*/
+    width: 86%;
+}
+#publish_intro{/*简介输入框*/
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 80px;
+}
+#publishsubmit{/*提交按钮*/
+    font-weight: 800;
+    width:100px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+#publishsubmit:hover{/*提交按钮*/
+    background-color: rgba(251, 252, 252, 1);
+    cursor: pointer;
+}
+
+
+#publishleft{/*左边部分*/
+    width:50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#clickpart{/*可点击区域*/
+    margin-top: 30px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.597);
+    border: 2px solid rgb(83, 83, 83);
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height:80%;
+}
+#clickpart:hover{/*可点击区域*/
+    cursor: pointer;
+}
+#clickpart img:nth-child(1){/*预览图片框*/
+    border: 2px solid rgb(83, 83, 83);
+    max-width:100%;
+    max-height:100%;
+}
+#clickpart img:nth-child(2){/*加号图片框*/
+    width:30%;
+}
+#informpart .text{/*上传图片提示信息*/
+    text-align: center;
+    font-size: x-large;
+    font-weight: 800;
+    margin-top: 20px;
+}
+#informpart .filename{/*上传图片提示文件名*/
+    text-align: center;
+    font-size: large;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.publishwarning{/*表单验证提示信息样式*/
+    font-size: 1px;
+    font-weight: 600;
+    color: rgb(226, 0, 0);
+}
+#warninform1{/*表单验证提示信息样式*/
+    font-size:large;
+    font-weight: 600;
+    color: rgb(226, 0, 0);
+}
+

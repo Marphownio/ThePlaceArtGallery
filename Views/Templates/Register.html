@@ -1,0 +1,58 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <link rel="shortcut icon" href="./Views/Static/Images/logoCircle.JPG">
+        <script type="text/javascript" src="./Views/Static/Javascript/Register.js"></script>
+        <meta charset="utf-8">
+        <meta name="register" content="width=device-width, initial-scale=1.0">
+        <title>The Place-注册</title>
+        <link rel="stylesheet" type="text/css" href="./Views/Static/CSS/Register.css"/>
+    </head>
+    <body>
+    <!-- 导航栏 -->
+    <?php
+            if(isset($_SESSION['currentUserName'])){
+                include './Views/Components/Navi_after.html';
+            }
+            else{
+                include './Views/Components/Navi_Before.html';
+            }
+            ?>
+
+    <!-- 注册框 -->
+        <form id="Register_form" action="?p=register&m=getRegister" method="post">
+            <h1 style="text-align:center">请输入注册信息</h1>
+<!--            <p id="warn_msg">提示信息</p>-->
+                <input id="IDinput" name="userName" onblur="IDtest()" type="text" placeholder="请输入用户名"><br>
+                <div class="warninfo" id="IdWhetherNull" style="text-align:center">&nbsp;</div>
+                <input id="Passwordinput1" name="userPassword" onkeyup="showTips()" onblur="PWtest()" type="password" placeholder="请输入密码"><br>
+                <div class="warninfo" id="PWwarning" style="text-align:center">&nbsp;</div>
+                <div id="tips">
+                    <span name="tip"></span>
+                    <span name="tip"></span>
+                    <span name="tip"></span>
+                    <span name="tip"></span>
+                </div>
+                <input id="Passwordinput2" onblur="PWtest()" type="password" placeholder="请再次确认密码"><br>
+                <div class="warninfo" id="rePWwarning" style="text-align:center">&nbsp;</div>
+                <input id="Emailinput" name="userEmail" onblur="Emailtest()" type="text" placeholder="请输入邮箱"><br>
+                <div class="warninfo" id="Emailwarning" style="text-align:center">&nbsp;</div>
+                <input id="PhoneNumber" name="userPhoneNumber" onblur="Phonenumbertest()" type="text" placeholder="请输入电话号码"><br>
+                <div class="warninfo" id="PNwarning" style="text-align:center">&nbsp;</div>
+                <textarea id="Address" name="userAddress" onblur="Addresstest()" rows="1"  placeholder="请输入收货地址"></textarea>
+                <div class="warninfo" id="ADDwarning" style="text-align:center">&nbsp;</div>
+                <input type="submit" onclick="return WhtherCanSubmit();" value="注册" id="submit_btn" ><br>
+            <a class="To_Jump" href="/login">已有账号？请点击登录</a>
+            <a class="To_Jump" href="/">回到首页</a>
+        </form>
+
+
+    <!-- 页脚版权信息 -->
+    <?php
+            include './Views/Components/Navi_bottom.html'
+            ?>
+    </body>
+</html>

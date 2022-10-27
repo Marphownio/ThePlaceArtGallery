@@ -1,0 +1,82 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="./Views/Static/Javascript/productDetails.js"></script>
+        <link rel="shortcut icon" href="./Views/Static/Images/logoCircle.JPG">
+        <meta name="productdetails" content="width=device-width, initial-scale=1.0">
+        <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/productdetails.css">
+        <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Navi.css">
+        <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Navi_bottom.css">
+        <title>
+            The Place-详细信息
+        </title>
+    </head>
+    <body>
+        <!-- 页头导航栏 -->
+        <?php
+            if(isset($_SESSION['currentUserName'])){
+                include './Views/Components/Navi_after.html';
+            }
+            else{
+                include './Views/Components/Navi_Before.html';
+            }
+                require './Controller/productController.php';
+                $product = getProductInfromById();
+                include './Controller/userController.php';
+                updateHistory($product['productId']);
+?>
+
+    <!-- 详情信息 -->
+    <div id="productdetails">
+        <img id="productimg" src="?p=user&m=imgView&a=<?php echo $product['productId']; ?>" >
+        <canvas id="smallBox" width="150px" height="150px"></canvas>
+
+        <div id="productinfor">
+            <span class="detailsinfo">艺术品名：<?php echo $product['productName']; ?></span>
+            <span class="detailsinfo">作 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<?php echo $product['productArtist']; ?></span>
+            <span class="detailsinfo">售 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：￥<?php echo $product['productPrice']; ?></span>
+            <span class="detailsinfo">是否出售：<?php if($product['productState']==0){echo "未售出";}
+                                                    else if($product['productState']==1){echo "已售出";} ?></span>
+            <span class="detailsinfo">访 &nbsp;问 &nbsp;量：<?php echo $product['productViews'] + 1; ?></span>
+            <span class="detailsinfo">发 &nbsp;布 &nbsp;者：<?php echo $product['productUploaderName']; ?></span>
+            <span class="detailsinfo">发布日期：<?php  echo $product['productReleaseDate']; ?></span>
+            <span class="detailsinfo">详细信息：</span>
+            <span class="detailsinfo">&nbsp;-年份：<?php  echo $product['productCreatedYear']; ?></span>
+            <span class="detailsinfo">&nbsp;-大小：<?php  echo $product['productLength']; ?>m * <?php  echo $product['productWidth']; ?>m</span>
+            <span class="detailsinfo">&nbsp;-时代：<?php  echo $product['productCreatedTimes']; ?></span>
+            <span class="detailsinfo">&nbsp;-风格：<?php  echo $product['productType']; ?></span>
+            <div id="buybut">
+                <div class="detalisbtn" onclick="javascript:addToShoppingCart(<?php echo $product['productId']; ?>)"><a >加入购物车</a></div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- 商品评论 -->
+    <div>
+        <div id="ToSeeComment">查 看 评 论</div>
+        <div id="ToSeeCommentSymbol">︾</div>
+    </div>
+    <div id="productcomments">
+            <div id="tocomment">
+                <input id="comment" name="commentContent" type="text" placeholder="<?php if(isset($_SESSION['currentUserName'])){
+                                                                    echo '发布一条友善的评论吧!';
+                                                                }
+                                                                else{
+                                                                    echo '请先登录后再发表评论哦！';
+                                                                }?>"></input>
+                <input id="commentsubmit" type="submit" onclick="toComment()" value="确认发布" <?php if(!isset($_SESSION['currentUserName'])){echo 'disabled';}?>/>
+            </div>
+        <table id="commentstable">
+        </table>
+    </div>
+    </body>
+    <!--页脚信息 -->
+    <footer id="foot_information">
+        <div id="copyright_info">Copyright &copy;2022 Marphownio. All rights reserved.</div>
+    </footer>
+</html>

@@ -1,0 +1,96 @@
+* {
+        padding: 0;
+        margin: 0;
+}
+.shell{/*整个主页显示框*/
+    height: 100vh;        /*高度为整个显示器高度*/
+    overflow-x: hidden;
+    perspective: 5px;
+}
+.shell div{             /* 对所有的文字以及图片显示框*/
+    position: relative;
+    letter-spacing: 2px; /*字距*/
+}
+.image{                 /*主页欢迎图片*/
+    transform: translateZ(-1px) scale(1.6);/*z轴降低，尺寸增大，视差效果*/
+    background-size: cover;
+    height: 90vh;
+    z-index: -1;
+}
+.image1{                /*主页提示图片（最新发布等）*/
+    transform: translateZ(-1px) scale(1.6);/*z轴降低，尺寸增大，视差效果*/
+    background-size: cover;
+    height: 45vh;
+    max-height: 550px;
+    z-index: -1;
+}
+.text{                  /*主页文字框flex布局*/
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 45vh;
+    background-color: rgba(255, 255, 255, 1);
+}
+.heading{               /*主页欢迎文字*/
+        z-index: -1;    /*显示优先级*/
+        transform: translateY(-50vh) translateZ(1px);/*位置确定，z轴提升，视差效果*/
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+.heading1{              /*主页提示文字（最新发布等）*/
+    z-index: -1;        /*显示优先级*/
+    transform: translateY(-30vh) translateZ(1px);/*位置确定，z轴提升，视差效果*/
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.word1{     /*欢迎文字-大尺寸*/
+    font-size: 70px;
+    font-weight: 600;
+    font-family: 'Microsoft YaHei', Helvetica, sans-serif;
+}
+.word2{     /*欢迎文字-小尺寸*/
+    font-size: 70px;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-weight: 600;
+}
+.word3{         /*欢迎文字*/
+    font-size: 35px;
+    font-weight: 600;
+    font-family: 'Microsoft YaHei', Helvetica, sans-serif;
+}
+.word4{         /*欢迎文字*/
+    margin-top: 30px;
+    margin-left: 1000px;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Microsoft YaHei', Helvetica, sans-serif;
+}
+.word5{         /*欢迎文字*/
+    margin-top: 20px;
+    font-size: 60px;
+    font-weight: 600;
+    font-family: 'Microsoft YaHei', Helvetica, sans-serif;
+}
+/*页脚信息框*/
+#foot_information{
+    width: 100%;
+    display: block;
+    position: relative;
+    bottom: 0;
+    clear:both; 
+    height: 40px;
+    color: #f4f1de;
+    background-color: rgb(22, 35, 42);
+} 
+/*提示信息样式*/
+#copyright_info{
+    height:40px;
+    line-height: 40px;
+    width:100%;
+    text-align: center;
+}

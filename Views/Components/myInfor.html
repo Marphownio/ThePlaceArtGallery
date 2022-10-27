@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="../Views/Static/CSS/myInfor.css">
+<script type="text/javascript" src="../Views/Static/Javascript/myInfor.js"></script>
+<?php
+    $user = new UserModel();
+    $userInform = $user->getUserInformation();
+?>
+<div id="profile_body">
+        <table cellspacing="0" cellpadding="0" id="peronalinformation">
+            <tr>
+                <th colspan="4">我的基本信息</th>
+            </tr>
+            <tr>
+                <td class="clo0"><img src="../Views/Static/Images/icons/用户名.png"></td>
+                <td class="clo2" rowspan="2"><?php echo $userInform['userName'];?></td>
+                <td class="clo0"><img src="../Views/Static/Images/icons/邮箱.png"></td>
+                <td class="clo4" rowspan="2"><?php echo $userInform['userEmail'];?></td>
+            </tr>
+            <tr>
+                <td class="clo1">用户名</td>
+                <td class="clo1">邮箱</td>
+            </tr>
+            <tr>
+                <td class="clo0"><img src="../Views/Static/Images/icons/电话.png"></td>
+                <td class="clo2" rowspan="2"><?php echo $userInform['userPhoneNumber'];?></td>
+                <td class="clo0"><img src="../Views/Static/Images/icons/地址.png"></td>
+                <td class="clo4" rowspan="2"><?php echo $userInform['userAddress'];?></td>
+            </tr>
+            <tr>
+                <td class="clo1">电话</td>
+                <td class="clo1">地址</td>
+            </tr>
+            <tr>
+                <td class="clo0"><img src="../Views/Static/Images/icons/余额.png"></td>
+                <td class="clo2" rowspan="2">￥<?php echo $userInform['userAccount'];?></td>
+                <td class="clo0"><img src="../Views/Static/Images/icons/充值.png"></td>
+                <td class="clo4" rowspan="2"><button id="money_sunmit" onclick="openTopUpDialog()">点击充值</button></td>
+            </tr>
+            <tr>
+                <td class="clo1">账户余额</td>
+                <td class="clo1">充值</td>
+            </tr>
+        </table>
+</div>
+

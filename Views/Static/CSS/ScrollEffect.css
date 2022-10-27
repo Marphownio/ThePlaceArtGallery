@@ -1,0 +1,37 @@
+*{
+    user-select: none;/*页面不允许做粘贴复制*/
+}
+
+html{/*页面的整体布局*/
+    margin: 0;
+    padding: 0;
+}
+
+#BackgroundWords{/*Marphownio这个词的样式*/
+    background-image: url("../Images/Background.jpg");
+    background-size: cover;
+    background-position: 50% 50%;/*图片的相对位置*/
+    height: 95vh;
+    font: 1000 19rem '';/*字粗 字大小 */
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    line-height: 80vh;/*字的高度*/
+    background-clip: text;
+    -webkit-background-clip: text;/*在字中显示图片*/
+    -webkit-text-fill-color: transparent;/*字透明*/
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+#BackgroundWords::before {/*Marphownio这个词的覆盖图片*/
+    content: '';
+    background-size: cover;
+    background-image: inherit;/*继承自父元素*/
+    background-position: 50% 50%;
+    position: absolute;
+    top: 0;/*确认位置*/
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -99;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="shortcut icon" href="./Views/Static/Images/logoCircle.JPG">
+    <meta name="search" content="width=device-width, initial-scale=1.0">
+	<title>The Place-购物车</title>
+    <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Navi_bottom.css">
+	<link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Soppingcart.css">
+    <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Navi.css">
+     <script type="text/javascript" src="./Views/Static/Javascript/shoppingCart.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <?php
+        include './Views/Components/Navi_after.html';
+?>
+
+
+    <div id="cartpart">
+   <table>
+	   <thead>
+		   <tr>
+			   <th class="thtwohead" colspan="2">商品信息</th>
+			   <th class="ththree">简介</th>
+			   <th class="thfour">发布者</th>
+			   <th class="thfive">价格</th>
+               <th class="thsix">状态</th>
+			   <th class="thseven">操作</th>
+		   </tr>
+	   </thead>
+	   <tbody id="allProductInCart">
+	   </tbody>
+   </table>
+</div>
+
+	<?php require './Views/Components/toBuyDialog.html';?>
+<footer id="foot_information">
+    <div id="copyright_info">Copyright &copy;2022 Marphownio. All rights reserved.</div>
+</footer>
+</body>
+</html>

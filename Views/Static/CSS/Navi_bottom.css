@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;/*页面不允许做粘贴复制*/
+}
+
+/*页脚信息框*/
+#foot_information{
+    width: 100%;
+    display: block;
+    position: relative;
+    bottom: 0;
+    clear:both;
+    height: 40px;
+    color: #f4f1de;
+    background-color: rgb(22, 35, 42);
+}
+/*提示信息样式*/
+#copyright_info{
+    height:40px;
+    line-height: 40px;
+    width:100%;
+    text-align: center;
+}

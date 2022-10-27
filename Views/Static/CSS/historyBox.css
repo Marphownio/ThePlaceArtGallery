@@ -1,0 +1,65 @@
+#historyBox{
+    transform: translateY(-400px);
+    opacity: 1;
+    transition: .4s;
+    background-color: rgba(255, 255, 255, 1);
+    width:380px;
+    height:320px;
+    z-index: 99;
+    position: absolute;
+    border: 1px solid silver;
+    left:37%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#historyBox #lists{
+    width: 50%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+#historyBox a{
+    text-decoration: none;
+    color: rgb(37, 66, 83);
+}
+#historyBox li{
+    margin-bottom: 10px;
+}
+#historyBox #btns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: -5px;
+    width:80%;
+}
+#historyBox #submitbtn{/*提交按钮*/
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: rgb(37, 66, 83,0.8);
+    width: 30%;
+    line-height:35px ;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+}
+#historyBox #submitbtn:hover{/*鼠标点击提交按钮后效果*/
+    background-color: rgb(37, 66, 83, 1);
+    cursor: pointer;
+}
+#historyBox #closeaa{
+    height: 26px;
+    cursor: pointer;
+}
+#historyBox #closeIcon{
+    margin-top: 3px;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

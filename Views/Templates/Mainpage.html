@@ -1,0 +1,129 @@
+<?php
+session_start();
+?>
+<html>
+    <head>
+        <link rel="shortcut icon" href="./Views/Static/Images/logoCircle.JPG">
+        <title>The Place-主页</title>
+        <meta charset="utf-8">
+        <meta name="mainpage" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="./Views/Static/Javascript/Mainpage.js"></script>
+        <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/CurrentPopular.css">
+        <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Lunbo.css">
+        <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Mainpage.css">
+    </head>
+    <body>
+        <div class="shell">
+            <!-- 导航栏 -->
+            <?php
+            if(isset($_SESSION['currentUserName'])){
+                include './Views/Components/Navi_after.html';
+            }
+            else{
+                include './Views/Components/Navi_Before.html';
+            }
+            ?>
+
+            <div class="image" style="background-image: url('./Views/Static/Images/Mainpage/1.jpg');"></div>
+                <div class="heading">
+                    <div class="word1">欢迎来到</div><br>
+                    <div class="word2">The Place Art Gallery</div>
+                </div>
+            <div class="text">
+                <div class="word3">艺术的伟大意义，在于它能显示人的真正感情，内心生活的奥秘和热情的世界</div>
+                <div class="word4">——罗曼·罗兰</div>
+            </div>
+    
+            <div class="image" style="background-image: url('./Views/Static/Images/Mainpage/2.jpg');"></div>
+                <div class="heading">
+                    <div class="word5">来这里</div>
+                    <div class="word5">探索最新、最热门的艺术品</div>
+                </div>
+            <div class="text">
+                <div class="word3">是时候开启旅程了</div>
+            </div>
+    
+
+             <!-- 主页轮播图 -->
+            <div class="image1" style="background-image: url('./Views/Static/Images/Mainpage/3.jpg');"></div>
+            <div class="heading1">
+                <p id="exploremore">< 探 索 更 多 | Explore More ></p>
+            </div>
+            <div id="part2">
+                <h1>您可以点击查看我们的代表艺术品</h1>
+                <div id="lunbo">
+                    <ul id="images">
+                        <li onclick="javascript:window.location.href='/productDetails?productId=18';" class="img"></li>
+                        <li onclick="javascript:window.location.href='/productDetails?productId=22';" class="img"></li>
+                        <li onclick="javascript:window.location.href='/productDetails?productId=19';" class="img"></li>
+                        <li onclick="javascript:window.location.href='/productDetails?productId=23';" class="img"></li>
+                        <li onclick="javascript:window.location.href='/productDetails?productId=21';" class="img"></li>
+                        <li onclick="javascript:window.location.href='/productDetails?productId=20';" class="img"></li>
+                    </ul>
+                    <ul id="min-images">
+                        <li class="min"></li>
+                        <li class="min"></li>
+                        <li class="min"></li>
+                        <li class="min"></li>
+                        <li class="min"></li>
+                        <li class="min"></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 热门作品 -->   
+            <div class="image1" style="background-image: url('./Views/Static/Images/Mainpage/4.jpg');"></div>
+            <div class="heading1">
+                <p id="currentpopular">< 当 前 热 门 | Currently Popular ></p>
+            </div>
+            <?php require './Controller/productController.php';
+                $popularProduct = popularProduct();
+            ?>
+            <div id="part3">
+                <h1>热门的艺术品或许可以帮您了解时下潮流</h1>
+                <div id="CurrentPopularPart">
+                    <?php while ($info = mysqli_fetch_assoc($popularProduct)){?>
+                    <div class="card">
+                        <div class="photo"><img src="?p=user&m=imgView&a=<?php echo $info['productId']; ?>"></div>
+                        <h1><?php echo $info['productName']; ?></h1>
+                        <div class="p_productArtist"><?php echo $info['productArtist']; ?></div>
+                        <div class="priceAndDate"><div>￥<?php echo $info['productPrice']; ?></div><div>&nbsp;&nbsp;|&nbsp;&nbsp;</div><div>访问量：<?php echo $info['productViews']; ?></div></div>
+                        <p>简介：<?php echo $info['productIntroduction']; ?></p>
+                        <a href="/productDetails?productId=<?php echo $info['productId']; ?>">查看详情</a>
+                    </div>
+                    <?php }?>
+                </div>
+            </div>
+                
+         
+
+                 <!-- 最新发布 -->
+            <div class="image1" style="background-image: url('./Views/Static/Images/Mainpage/5.jpg');"></div>
+            <div class="heading1">
+                <p id="latestrelease">< 最 新 发 布 | Latest Release ></p>
+            </div>
+            <div id="part4">
+                <h1>来看看如今的艺术家们都在创作什么吧</h1>
+                <div id="latestreleasePart">
+                    <?php
+                    $leastProducts = latestProduct();
+                    while ($info = mysqli_fetch_assoc($leastProducts)){?>
+                    <div class="card">
+                        <div class="photo"><img src="?p=user&m=imgView&a=<?php echo $info['productId']; ?>"></div>
+                        <h1><?php echo $info['productName']; ?></h1>
+                        <div class="p_productArtist"><?php echo $info['productArtist']; ?></div>
+                        <div class="priceAndDate"><div>￥<?php echo $info['productPrice']; ?></div><div>&nbsp;&nbsp;|&nbsp;&nbsp;</div><div><?php echo $info['productReleaseDate']; ?></div></div>
+                        <p><?php echo $info['productIntroduction']; ?></p>
+                        <a href="/productDetails?productId=<?php echo $info['productId']; ?>">查看详情</a>
+                    </div>
+                    <?php }?>
+                </div>
+             </div>
+             <!-- 页脚版权信息 -->
+            <?php
+            include './Views/Components/Navi_bottom.html'
+            ?>
+        </div>
+        
+
+    </body>
+</html>

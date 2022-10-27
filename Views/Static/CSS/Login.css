@@ -1,0 +1,112 @@
+*{
+    user-select: none;/*页面不允许做粘贴复制*/
+}
+
+body{/*背景参数*/
+    background: url(../Images/Background.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+}
+
+.login_form{/*登录界面框*/
+    position: relative;
+    margin-top: 110px;
+    left: 50%;
+    margin-left: -200px;
+    margin-bottom: 100px;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 400px;
+    height: 475px;
+    border-radius: 25px;
+    text-align: center;
+    padding: 15px;
+}
+
+#warn_msg{/*网页提示信息，用作后端信息的显示*/
+    display:block;
+    color:red;
+    font-size:xx-small;
+}
+
+#IDinput{/*用户名输入框*/
+    outline: none;
+    border: none;
+    background-color: rgba(238, 237, 237, 0);
+    width: 90%;
+    height: 35px;
+    margin-top: 45px;
+    border-bottom: 2px solid rgb(138, 138, 138);
+    font-size: 20px;
+}
+
+#Passwordinput{/*密码输入框*/
+    outline: none;
+    border: none;
+    background-color: rgba(238, 237, 237, 0);
+    width: 90%;
+    height: 35px;
+    margin-top: 35px;
+    border-bottom: 2px solid rgb(138, 138, 138);
+    font-size: 20px;
+}
+
+#IdentifyingCode{/*验证码输入框*/
+    outline: none;
+    border: none;
+    margin-left: -6px;
+    background-color: rgba(238, 237, 237, 0);
+    width: 55%;
+    height: 35px;
+    margin-top: 15px;
+    border-bottom: 2px solid rgb(138, 138, 138);
+    font-size: 20px;
+}
+
+#submit_btn{/*提交按钮*/
+    outline: none;
+    border: none;
+    background-color: #59c2c5;
+    width: 30%;
+    height: 43px;
+    border-radius: 8px;
+    margin-top: 35px;
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+}
+#submit_btn:hover{/*鼠标点击提交按钮后效果*/
+    width: 30%;
+    height: 43px;
+    background-color: #59a3c5;
+}
+.To_register{/*跳转至注册页面*/
+    display:block;
+    text-decoration: none;
+    font-size: small;
+    margin-top: 15px;
+    color: #59a3c5;
+}
+.To_register:hover{/*跳转至注册页面悬浮效果*/
+    display:block;
+    text-decoration: none;
+    font-size: small;
+    margin-top: 15px;
+    color: #3c6e85;
+}
+.warninfo{/*输入框输入出现错误时的提醒信息*/
+    color:rgb(46, 46, 46);
+    font-size:x-small;
+}
+
+/*验证码框*/
+#canvas{
+    margin-left: 15px;
+    height:35px;
+    width:110px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#canvas{
+   cursor: pointer;
+}

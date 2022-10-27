@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="../Views/Static/CSS/myArts.css">
+<script type="text/javascript" src="../Views/Static/Javascript/myArts.js"></script>
+<div id="profile_body">
+        <div id="publish_add">
+            <img src="../Views/Static/Images/icons/添加.png"/>
+            <button onclick="publish()">发布新艺术品</button>
+        </div>
+    <?php
+include './Controller/userController.php';
+$dataTotal = myArtWorks();
+$i = 1;
+?>
+            <table cellspacing="0" id="publishedlist">
+                <tr>
+                    <th colspan="5">我发布的作品</th>
+                </tr>
+                <tr>
+                    <th>编号</th>
+                    <th>艺术品</th>
+                    <th colspan="2">详细信息</th>
+                    <th>操作</th>
+                </tr>
+<?php
+while ($info = mysqli_fetch_assoc($dataTotal)) {
+?>
+                <tr>
+                    <td class="pub_clo1" rowspan="2"><?php echo $i; ?></td>
+                    <td class="pub_clo2" rowspan="2"><img src="?p=user&m=imgView&a=<?php echo $info['productId']; ?>"></td>
+                    <td class="pub_clo3">名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称:</td>
+                    <td class="pub_clo5"><a title="点击进入艺术品详情页" href="/productDetails?productId=<?php echo $info['productId']; ?>"><?php echo $info['productName']; ?></a></td>
+                    <td class="pub_clo7" rowspan="2">
+                        <div id="btnsss">
+                            <div id="modifyBtn" onclick="productModify('<?php echo $info['productId']; ?>')">修改</div>
+                            <div id="deleteBtn" onclick="openDeleteDialog('<?php echo $info['productId']; ?>')"> 删除 </div>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pub_clo4">发布日期</td>
+                    <td class="pub_clo6"><?php echo $info['productReleaseDate']; ?></td>
+                </tr>
+                <?php $i++;} ?>
+                <?php if($i==1){?>
+
+                <tr>
+                    <td id="nullArtWorks" colspan="5">您还未发布任何作品:(<br>快点击左上角按钮进行发布吧！</td>
+                </tr>
+               <?php }; ?>
+            </table>
+        </div>

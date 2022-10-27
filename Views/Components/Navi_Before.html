@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="./Views/Static/Javascript/navi.js"></script>
+    <link type="text/css"  rel="stylesheet" href="./Views/Static/CSS/Navi.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <header id="navig">
+        <ul id="shell">
+            <li id="logoParts" class="non_list"><img  onclick="javascript:window.location.href='/';" id="logoCorn" src="./Views/Static/Images/logo.png" ><a id="logo" href="/">The Place Art Gallery</a></li>
+            <?php   $url = $_SERVER['REQUEST_URI'];
+                    $urlAfter=parse_url($url);
+                    $path=$urlAfter['path'];
+                    $pageName;
+                    if($path=='/'){$pageName="主页";}
+                    else if($path=='/login'){$pageName="登录页";}
+                    else if($path=='/register'){$pageName="注册页";}
+                    else if($path=='/searchform'){$pageName="搜索页";}
+                    else if($path=='/productDetails'){$pageName="商品详情页";}
+                    else if($path=='/productSearch'){$pageName="搜索页";}
+                    else if($path=='/publish'){$pageName="艺术品发布页";}
+                    else if($path=='/myShoppingCart'){$pageName="购物车页";}
+                    else if($path=='/productModify'){$pageName="艺术品修改页";}
+                    else if($path=='/profile/myInfor'){$pageName="个人中心";}
+                    else if($path=='/profile/myArts'){$pageName="个人中心";}
+                    else if($path=='/profile/myPurchased'){$pageName="个人中心";}
+                    else if($path=='/profile/mySold'){$pageName="个人中心";}
+?>
+
+            <li class="non_list"><span id="currentPageName">当前您在:<?php echo $pageName;?></span></li>
+            <li class="non_list non_lista"><a href="/">首页</a></li>
+            <li class="non_list non_lista">
+                <div id="searchitms">
+                    <div id="trigger"><a href="/searchform">搜索</a></div>
+                        <form id="subsearch">
+                            <input id="search-txt" type="text" placeholder="点击进行搜索" />
+                            <input type="submit" hidden><img onclick="naviSearch()" src="./Views/Static/Images/icons/searchicon.png">
+                        </form>
+                </div>
+                
+            </li>
+            <li class="non_list non_lista"><a href="/productSearch?sortBy=1&searchBy=1&content=">商品页</a></li>
+            <li class="non_list non_lista" id="btn">
+                <span>登录/注册</span>
+                <ul id="information">
+                    <li class="list_btn"><a href="/login">登录</a></li>
+                    <li class="list_btn"><a href="/register">注册</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+</body>
+</html>
